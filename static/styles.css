@@ -90,7 +90,13 @@
     scroll-behavior: smooth;
   }
 }
-
+.company .left {
+  font-size: calc(1.3rem + 0.6vw);
+  width: 40%; /* 또는 다른 원하는 너비값 */
+}
+.company .right {
+  width: 70%;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
