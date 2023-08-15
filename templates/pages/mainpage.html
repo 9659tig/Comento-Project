@@ -45,7 +45,7 @@
                       {% for content in content_list %}
                         {% if content.isMain or forloop.first %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                <img src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" class="d-block w-100" alt="...">
+                                <img src="{{ content.image.url }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block py-1 bg-white rounded-3 justify-content-sm-start">
                                     <h5 class="text-dark mb-0 pb-1">{{content.title}}</h5>
                                     <p class="text-dark mb-0">{{content.sub_content}}</p>

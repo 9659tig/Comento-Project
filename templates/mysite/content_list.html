@@ -35,9 +35,9 @@
                 {% for content in content_list %}
                     {% if content.isMain %}
                     <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+                        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{{ content.image.url }}" alt="..." /></div>
                         <div class="col-lg-5">
-                            <h1 class="font-weight-light"><a href="/mysite/{{content.id}}/">{{content.title}}</a></h1>
+                            <h1>{{content.title}}</h1>
                             <p>{{content.sub_content}}</p>
                             <a class="btn btn-primary" href="#!">상품 상세보기</a>
                         </div>
@@ -48,9 +48,9 @@
                 {% with latest_content=content_list.first %}
                 <div class="h2 text-center">새로운 신제품을 소개합니다.</div>
                 <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{{ latest_content.image.url }}" alt="..." /></div>
                     <div class="col-lg-5">
-                        <h1 class="font-weight-light"><a href="/mysite/{{latest_content.id}}/">{{latest_content.title}}</a></h1>
+                        <h1>{{latest_content.title}}</h1>
                         <p>{{latest_content.sub_content}}</p>
                         <a class="btn btn-primary" href="#!">상품 상세보기</a>
                     </div>
