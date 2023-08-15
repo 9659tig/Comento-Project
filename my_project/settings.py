@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import json
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4l1(v*$h&n$6e-f)zh5@2)^s_@5_o)4n2r7hvo3t0c9%9@6-w5'
+#KAKAO_MAP_API_KEY = os.environ.get('KAKAO_MAP_API_KEY')
+#print(KAKAO_MAP_API_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,3 +130,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+KAKAO_MAP_API_KEY = secrets.get('KAKAO_MAP_API_KEY', '')
+print(KAKAO_MAP_API_KEY, "Test")
