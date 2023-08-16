@@ -135,4 +135,3 @@ with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
     secrets = json.load(secrets_file)
 
 KAKAO_MAP_API_KEY = secrets.get('KAKAO_MAP_API_KEY', '')
-print(KAKAO_MAP_API_KEY, "Test")
