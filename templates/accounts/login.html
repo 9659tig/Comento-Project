@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% if form.errors %}
+    <p>아이디 또는 비밀번호가 틀립니다. 다시 시도해주세요.</p>
+{% endif %}
+<div class="container px-4 px-lg-5 my-5">
+    <div class="py-5 center">
+        <form method="post" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>아이디:</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+        </table>
+        <input class="btn btn-primary px-3 py-1 my-2" type="submit" value="login">
+        </form>
+        <a class="btn btn-primary px-3 py-1" href="{% url 'accounts:signup' %}">signup</a>
+    </div>
+
+</div>
+{% endblock %}

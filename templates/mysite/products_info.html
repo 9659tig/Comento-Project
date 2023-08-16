@@ -11,7 +11,7 @@
                         <h2 class="card-title"><a href="/mysite/{{content.id}}/">{{content.title}}</a></h2>
                         <p class="card-text">{{content.sub_content}}</p>
                     </div>
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">상품 상세보기</a></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'detail' content.id %}">상품 상세보기</a></div>
                 </div>
             </div>
         {% endfor %}
