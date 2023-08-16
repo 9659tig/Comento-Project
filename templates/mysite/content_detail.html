@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <h1>{{content_list.title}}</h1>
+        <img src="{{ content_list.image.url }}" class="d-block w-75" alt="...">
+        <p>{{content_list.content}}</p>
+    </div>
+</div>
+{% endblock %}
