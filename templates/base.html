@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Products</title>
+        <title>Virtual Comapny</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -14,9 +14,11 @@
         <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}"/>
     </head>
     <body>
-        {% include "navbar.html" %}
-        {% block content %}
-        {% endblock %}
-        {% include "footer.html" %}
+        <div class="wrap">
+            {% include "navbar.html" %}
+            {% block content %}
+            {% endblock %}
+            {% include "footer.html" %}
+        </div>
     </body>
 </html>

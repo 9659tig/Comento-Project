@@ -5692,6 +5692,10 @@ textarea.form-control-lg {
   border-width: 0;
 }
 
+.login {
+  border: 1px solid #000000;
+}
+
 .bs-popover-top > .popover-arrow, .bs-popover-auto[data-popper-placement^=top] > .popover-arrow {
   bottom: calc(-1 * (var(--bs-popover-arrow-height)) - var(--bs-popover-border-width));
 }
@@ -10829,4 +10833,20 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrap {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 114px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
