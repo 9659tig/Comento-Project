@@ -9,6 +9,9 @@ class Product(models.Model):
     pub_date = models.DateTimeField('date published')
     isMain = models.BooleanField()
 
+    def __str__(self):
+        return self.title
+
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content_list = models.ForeignKey(Product, on_delete=models.CASCADE)
