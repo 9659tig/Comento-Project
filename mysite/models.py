@@ -8,7 +8,7 @@ class Product(models.Model):
     content = models.TextField()
     pub_date = models.DateTimeField('date published')
     isMain = models.BooleanField()
-
+    like = models.ManyToManyField(User, related_name='likes', blank=True)
     def __str__(self):
         return self.title
 

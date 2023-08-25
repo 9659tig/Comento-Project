@@ -1,4 +1,5 @@
 from django.core.exceptions import PermissionDenied
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import  login_required
 from .models import Product, Comment
@@ -65,3 +66,15 @@ def comment_delete(req, comment_id):
     else:
         comment.delete()
     return redirect('detail', content_id=comment.content_list.id)
+
+@login_required(login_url='accounts:login')
+def like(req, content_id):
+    post = Product.objects.get(id=content_id)
+    user = req.user
+    if post.like.filter(id=req.user.id).exists():
+        post.like.remove(user)
+        return JsonResponse({'message': 'deleted', 'like_cnt' : post.like.count()})
+    else:
+        post.like.add(user)
+        return JsonResponse({'message': 'added', 'like_cnt' : post.like.count()})
+
